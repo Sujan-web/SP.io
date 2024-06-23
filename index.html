@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Simple Terminal</title>
+<title>Personal Terminal</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.19.1/css/jquery.terminal.min.css">
 <style>
     body {
@@ -32,48 +32,64 @@ $(document).ready(function() {
     $('#terminal').terminal(function(command) {
         if (command.toLowerCase() === 'help') {
             this.echo('Available commands:');
-            this.echo('  about - Information about me');
-            this.echo('  resume - View my resume');
-            this.echo('  ls - List directory contents');
-            this.echo('  pwd - Print working directory');
-            this.echo('  cat - Concatenate and display files');
-            this.echo('  whoami - Print current user name');
-            this.echo('  id - Print user and group information');
-            this.echo('  mkdir - Make directories');
-            this.echo('  rm - Remove files or directories');
-            this.echo('  cp - Copy files or directories');
-            this.echo('  mv - Move/rename files or directories');
-        } else if (command.toLowerCase() === 'about') {
-            this.echo('Hi, I am [Your Name], a [Your Profession].');
+            this.echo('  1 - List all my details');
+            this.echo('  2 - About me');
+            this.echo('  3 - Qualifications');
+            this.echo('  4 - Certificates');
+            this.echo('  5 - Technical skills');
+            this.echo('  6 - Experience');
+            this.echo('  7 - Projects');
+            this.echo('  8 - Interests and Hobbies');
+            this.echo('  9 - Future Goals');
+            this.echo('  10 - Message to Recruiters');
+        } else if (command.toLowerCase() === '1') {
+            this.echo('Listing all my details...');
+            // Implement logic to list all personal details
+            this.echo('Full Name: [Your Full Name]');
+            this.echo('Date of Birth: [Your Date of Birth]');
+            this.echo('Location: [Your Location]');
+            this.echo('Email: [Your Email]');
+            this.echo('Phone: [Your Phone Number]');
+            this.echo('LinkedIn: [Your LinkedIn Profile]');
+        } else if (command.toLowerCase() === '2') {
+            this.echo('Hi, I am [Your Name], [Your Profession].');
             this.echo('I love working on [Your Interests].');
-        } else if (command.toLowerCase() === 'resume') {
-            this.echo('Fetching resume...');
-            this.echo('Resume details here...');
-            // You can fetch and display your resume details here
-        } else if (command.toLowerCase() === 'ls') {
-            this.echo('Listing directory contents...');
-            // Implement ls command logic here
-        } else if (command.toLowerCase() === 'pwd') {
-            this.echo('/path/to/your/current/directory');
-        } else if (command.toLowerCase() === 'cat') {
-            this.echo('Displaying file contents...');
-            // Implement cat command logic here
-        } else if (command.toLowerCase() === 'whoami') {
-            this.echo('username');
-        } else if (command.toLowerCase() === 'id') {
-            this.echo('uid=1000(username) gid=1000(groupname) groups=1000(groupname)');
-        } else if (command.toLowerCase() === 'mkdir') {
-            this.echo('Creating new directory...');
-            // Implement mkdir command logic here
-        } else if (command.toLowerCase() === 'rm') {
-            this.echo('Removing file/directory...');
-            // Implement rm command logic here
-        } else if (command.toLowerCase() === 'cp') {
-            this.echo('Copying file/directory...');
-            // Implement cp command logic here
-        } else if (command.toLowerCase() === 'mv') {
-            this.echo('Moving file/directory...');
-            // Implement mv command logic here
+        } else if (command.toLowerCase() === '3') {
+            this.echo('Listing qualifications...');
+            // Implement logic to list qualifications
+            this.echo('- [Degree] in [Field] from [Institution], [Year]');
+            this.echo('- [Certification] from [Institution], [Year]');
+        } else if (command.toLowerCase() === '4') {
+            this.echo('Listing certificates...');
+            // Implement logic to list certificates
+            this.echo('- [Certificate Name] from [Institution], [Year]');
+        } else if (command.toLowerCase() === '5') {
+            this.echo('Listing technical skills...');
+            // Implement logic to list technical skills
+            this.echo('- Programming Languages: [List of Languages]');
+            this.echo('- Tools & Technologies: [List of Tools & Technologies]');
+        } else if (command.toLowerCase() === '6') {
+            this.echo('Listing experience...');
+            // Implement logic to list work experience
+            this.echo('- [Job Title] at [Company], [Dates]');
+            this.echo('  Responsibilities: [Responsibilities]');
+        } else if (command.toLowerCase() === '7') {
+            this.echo('Listing projects...');
+            // Implement logic to list projects
+            this.echo('- [Project Name], [Description], [Technologies Used]');
+        } else if (command.toLowerCase() === '8') {
+            this.echo('Listing interests and hobbies...');
+            // Implement logic to list interests and hobbies
+            this.echo('- [Interest/Hobby 1]');
+            this.echo('- [Interest/Hobby 2]');
+        } else if (command.toLowerCase() === '9') {
+            this.echo('Listing future goals...');
+            // Implement logic to list future goals
+            this.echo('- Short-term goal: [Goal]');
+            this.echo('- Long-term goal: [Goal]');
+        } else if (command.toLowerCase() === '10') {
+            this.echo('Message to recruiters...');
+            this.echo('Dear Recruiters, [Your Message]');
         } else {
             this.echo('Unknown command. Type "help" for available commands.');
         }
