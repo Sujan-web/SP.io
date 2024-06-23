@@ -1,123 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Personal Terminal</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.19.1/css/jquery.terminal.min.css">
-<style>
-    body {
-        font-family: 'Courier New', Courier, monospace;
-        background-color: #f0f0f0;
-        padding: 20px;
-    }
-    #terminal {
-        width: 100%;
-        height: 400px;
-        border: 1px solid #ccc;
-        overflow-y: auto;
-        background-color: #000;
-        padding: 10px;
-    }
-    .terminal .terminal-output,
-    .terminal .terminal-output div {
-        font-size: 2em; /* Double the default font size */
-        color: green; /* Set font color to green */
-        font-weight: bold; /* Make the font bold */
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Terminal Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.30.0/css/jquery.terminal.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .welcome-box {
+            background-color: #000000;
+            color: #00ff00;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .terminal {
+            width: 80%;
+            height: 400px; /* Fixed height */
+            margin: 0 auto;
+            border: 1px solid #00ff00;
+            padding: 20px;
+            background-color: #000;
+            font-size: 2em; /* Double the default font size */
+            color: #00ff00; /* Set font color to green */
+            font-weight: bold; /* Make the font bold */
+            overflow-y: auto; /* Enable vertical scroll */
+        }
+        .contact-details {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-details p {
+            margin: 5px 0;
+        }
+        .terminal-content {
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 2em; /* Double the default font size */
+        }
+    </style>
 </head>
 <body>
-
-<div id="terminal"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.19.1/js/jquery.terminal.min.js"></script>
-
-<script>
-$(document).ready(function() {
-    $('#terminal').terminal(function(command) {
-        switch(command.toLowerCase()) {
-            case 'help':
-                this.echo('Available commands:');
-                this.echo('  1 - List all my details');
-                this.echo('  2 - About me');
-                this.echo('  3 - Qualifications');
-                this.echo('  4 - Certificates');
-                this.echo('  5 - Technical skills');
-                this.echo('  6 - Experience');
-                this.echo('  7 - Projects');
-                this.echo('  8 - Interests and Hobbies');
-                this.echo('  9 - Future Goals');
-                this.echo('  10 - Message to Recruiters');
-                this.echo('  11 - clear');
-                break;
-            case '1':
-                this.echo('Listing all my details...');
-                this.echo('Full Name: [Your Full Name]');
-                this.echo('Date of Birth: [Your Date of Birth]');
-                this.echo('Location: [Your Location]');
-                this.echo('Email: [Your Email]');
-                this.echo('Phone: [Your Phone Number]');
-                this.echo('LinkedIn: [Your LinkedIn Profile]');
-                break;
-            case '2':
-                this.echo('Hi, I am [Your Name], [Your Profession].');
-                this.echo('I love working on [Your Interests].');
-                break;
-            case '3':
-                this.echo('Listing qualifications...');
-                this.echo('- [Degree] in [Field] from [Institution], [Year]');
-                this.echo('- [Certification] from [Institution], [Year]');
-                break;
-            case '4':
-                this.echo('Listing certificates...');
-                this.echo('- [Certificate Name] from [Institution], [Year]');
-                break;
-            case '5':
-                this.echo('Listing technical skills...');
-                this.echo('- Programming Languages: [List of Languages]');
-                this.echo('- Tools & Technologies: [List of Tools & Technologies]');
-                break;
-            case '6':
-                this.echo('Listing experience...');
-                this.echo('- [Job Title] at [Company], [Dates]');
-                this.echo('  Responsibilities: [Responsibilities]');
-                break;
-            case '7':
-                this.echo('Listing projects...');
-                this.echo('- [Project Name], [Description], [Technologies Used]');
-                break;
-            case '8':
-                this.echo('Listing interests and hobbies...');
-                this.echo('- [Interest/Hobby 1]');
-                this.echo('- [Interest/Hobby 2]');
-                break;
-            case '9':
-                this.echo('Listing future goals...');
-                this.echo('- Short-term goal: [Goal]');
-                this.echo('- Long-term goal: [Goal]');
-                break;
-            case '10':
-                this.echo('Message to recruiters...');
-                this.echo('Dear Recruiters, [Your Message]');
-                break;
-            case '11':
-                this.clear();
-                this.echo('Screen cleared. Type "help" for available commands.');
-                break;
-            default:
-                this.echo('Unknown command. Type "help" for available commands.');
-                break;
-        }
-    }, {
-        greetings: 'Welcome to my personal terminal. Type "help" for available commands.',
-        prompt: '> ',
-        onInit: function(term) {
-            term.clear();
-        }
-    });
-});
-</script>
-
+    <div class="welcome-box">
+        <h2>Welcome to My Terminal Resume</h2>
+        <p>Type "help" to list all available commands.</p>
+    </div>
+    <div id="terminal" class="terminal"></div>
+    <div class="contact-details">
+        <p>Email: Sujanp788@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/sujan-pandey-747867201/">Sujan Pandey</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.30.0/js/jquery.terminal.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#terminal').terminal(function(command) {
+                switch(command.toLowerCase()) {
+                    case '1':
+                        this.echo('Listing all my details...');
+                        this.echo('Full Name: Sujan Pandey');
+                        this.echo('Date of Birth: [Your Date of Birth]');
+                        this.echo('Location: [Your Location]');
+                        this.echo('Email: sujanp788@gmail.com');
+                        this.echo('Phone: [Your Phone Number]');
+                        this.echo('LinkedIn: <a href="https://www.linkedin.com/in/sujan-pandey-747867201/">https://www.linkedin.com/in/sujan-pandey-747867201/</a>');
+                        break;
+                    default:
+                        this.echo('Unknown command. Type "1" to list all my details.');
+                        break;
+                }
+            }, {
+                prompt: '> ',
+                onInit: function(term) {
+                    term.echo('Sujan Resume');
+                    term.echo('Type "1" to list all my details.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
