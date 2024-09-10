@@ -1,0 +1,77 @@
+<!-- introduction.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - IT Support Help Calls</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2e3b4e;
+            padding: 20px;
+            height: 100vh;
+            color: #ffffff;
+            position: fixed;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .conversation-box {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .customer-box, .agent-box {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .customer-box {
+            background-color: #e8f4fa;
+            border-left: 5px solid #2196F3;
+        }
+        .agent-box {
+            background-color: #e7f9e8;
+            border-left: 5px solid #4CAF50;
+        }
+        .response-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Issues</h2>
+        <a href="introduction.html" class="issue-link">Introduction</a>
+        <a href="problem-solving.html" class="issue-link">Problem-Solving</a>
+        <a href="conclusion.html" class="issue-link">Conclusion</a>
+    </div>
+
+    <div class="content">
+        <h1>Introduction</h1>
+        <div class="conversation-box">
+            <div class="agent-box">
+                <div class="response-label">Your Part:</div>
+                <p>A. “Good [morning/afternoon], Relative Network. This is SP speaking. How may I assist you today?”</p>
+                <p>B. “Could you please provide your company name, your name, and the device you are using?”</p>
+                <p>C. “Could you describe the issue you are experiencing? I’ll guide you through the resolution process.”</p>
+            </div>
+            <div class="customer-box">
+                <div class="response-label">Customer's Part:</div>
+                <p>(Customer responds with their issue, device details, etc.)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
