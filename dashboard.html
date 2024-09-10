@@ -1,0 +1,81 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support Help Tips</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow: auto;
+        }
+        .script-box {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Issues</h2>
+        <a onclick="showScript('issue1')">Issue 1: Network Connectivity</a>
+        <a onclick="showScript('issue2')">Issue 2: Printer Not Working</a>
+        <a onclick="showScript('issue3')">Issue 3: Software Installation</a>
+        <!-- Add more issues as needed -->
+    </div>
+    <div class="content">
+        <h2>Conversation Script</h2>
+        <div id="script-box" class="script-box">
+            <p>Select an issue from the sidebar to view the script.</p>
+        </div>
+    </div>
+
+    <script>
+        const scripts = {
+            issue1: `Customer: Hi, I'm having trouble with my internet connection.
+                     \nSupport: Sure, let's troubleshoot this together. Can you please tell me if you've tried restarting your router?`,
+            
+            issue2: `Customer: My printer is not working.
+                     \nSupport: I understand your concern. Let's start by checking if the printer is powered on and connected properly to your device.`,
+            
+            issue3: `Customer: How can I install new software on my computer?
+                     \nSupport: I'd be happy to guide you through this. First, can you confirm if you have administrative access on your computer?`
+            // Add more scripts as needed
+        };
+
+        function showScript(issueKey) {
+            const scriptBox = document.getElementById('script-box');
+            scriptBox.textContent = scripts[issueKey] || 'Script not available for this issue.';
+        }
+    </script>
+</body>
+</html>
