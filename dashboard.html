@@ -17,47 +17,11 @@
             padding: 20px;
             height: 100vh;
             color: #ffffff;
+            position: fixed;
         }
         .content {
-            flex: 1;
+            margin-left: 270px;
             padding: 20px;
-        }
-        .script-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .script-section {
-            margin-bottom: 20px;
-        }
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #4CAF50;
-        }
-        .conversation-box {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-        }
-        .customer-box, .agent-box {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        .customer-box {
-            background-color: #e8f4fa;
-            border-left: 5px solid #2196F3;
-        }
-        .agent-box {
-            background-color: #e7f9e8;
-            border-left: 5px solid #4CAF50;
-        }
-        .response-label {
-            font-weight: bold;
-            margin-bottom: 5px;
         }
         .issue-link {
             color: #fff;
@@ -71,59 +35,23 @@
 <body>
     <div class="sidebar">
         <h2>Issues</h2>
-        <a href="#" class="issue-link" data-issue="introduction">Introduction</a>
-        <a href="#" class="issue-link" data-issue="problem-solving">Problem-Solving</a>
-        <a href="#" class="issue-link" data-issue="conclusion">Conclusion</a>
+        <a href="printer.html" class="issue-link">Printers</a>
+        <a href="network-connection.html" class="issue-link">Network Connection</a>
     </div>
 
     <div class="content">
         <h1>IT Support Help Calls Dashboard</h1>
         <p>Select an issue from the sidebar to view the script.</p>
-                <div class="section-title">1. Introduction</div>
-                                <p>Good [morning/afternoon], Relative Network. This is SP speaking. How may I assist you today?</p>
-                        <p>Could you please provide your company name, your name, and the device you are using</p>
-                        <p>Could you describe the issue you are experiencing? I’ll guide you through the resolution process.</p>
+        <div class="section-title">1. Introduction</div>
+        <p>Good [morning/afternoon], Relative Network. This is SP speaking. How may I assist you today?</p>
+        <p>Could you please provide your company name, your name, and the device you are using?</p>
+        <p>Could you describe the issue you are experiencing? I’ll guide you through the resolution process.</p>
         <div class="section-title">2. Problem Solving</div>
-        <p>Select Relevant Issue from side bar. </p>
+        <p>Select Relevant Issue from sidebar.</p>
         <div class="section-title">3. Conclusion</div>
-                                <p>A. “Can you confirm if the issue has been resolved? If not, I may need to escalate this to my team leader and will update you as soon as possible.”</p>
-                        <p>B. “Is there anything else I can assist you with today?”</p>
-                        <p>C. “Thank you for calling. Have a great day. Goodbye.”</p>
-        <!-- Default script content can go here if needed -->
-
-        <!-- Script container to display selected issue scripts -->
-        <div id="scriptContent" class="script-container">
-            
-            <!-- Printer -->
-            <div class="script-section" id="printer">
-                <div class="section-title">Printer</div>
-            </div>
-
-        </div>
+        <p>A. “Can you confirm if the issue has been resolved? If not, I may need to escalate this to my team leader and will update you as soon as possible.”</p>
+        <p>B. “Is there anything else I can assist you with today?”</p>
+        <p>C. “Thank you for calling. Have a great day. Goodbye.”</p>
     </div>
-
-    <script>
-        // JavaScript to display the correct script section based on the clicked issue link
-        const issueLinks = document.querySelectorAll('.issue-link');
-        const scriptContent = document.getElementById('scriptContent');
-
-        issueLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const issueId = link.getAttribute('data-issue');
-
-                // Hide all script sections first
-                const allSections = scriptContent.querySelectorAll('.script-section');
-                allSections.forEach(section => section.style.display = 'none');
-
-                // Show the relevant section
-                const activeSection = document.getElementById(issueId);
-                if (activeSection) {
-                    scriptContent.style.display = 'block';
-                    activeSection.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
