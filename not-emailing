@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Connection - IT Support Help Calls</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .sidebar {
+            width: 150px;
+            background-color: #2e3b4e;
+            padding: 20px;
+            height: 200vh;
+            color: #ffffff;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .conversation-box {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .customer-box, .agent-box {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .customer-box {
+            background-color: #e8f4fa;
+            border-left: 5px solid #2196F3;
+        }
+        .agent-box {
+            background-color: #e7f9e8;
+            border-left: 5px solid #4CAF50;
+        }
+        .response-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .issue-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Issues</h2>
+        <a href="network-connection.html" class="issue-link">Network Connection</a>
+        <a href="not-printing.html" class="issue-link">Not Printing</a>
+        <a href="not-emailing.html" class="issue-link">Not Emailing</a>
+        <a href="slow-computer.html" class="issue-link">Slow Computer</a>
+        <a href="software-install.html" class="issue-link">Software Install</a>
+        <a href="vpn-connection.html" class="issue-link">VPN Connection</a>
+        <a href="bsod.html" class="issue-link">BSOD</a>
+        <a href="account-lockout.html" class="issue-link">Account Lockout</a>
+        <a href="slow-internet.html" class="issue-link">Slow Internet</a>
+        <a href="access-shares.html" class="issue-link">Access Shares</a>
+        <a href="no-boot-up.html" class="issue-link">No Boot Up</a>
+        <a href="audio-issue.html" class="issue-link">Audio Issue</a>
+        <a href="crashed-app.html" class="issue-link">Crashed App</a>
+        <a href="remote-connection.html" class="issue-link">Remote Connection</a>
+        <a href="passowrd-error.html" class="issue-link">Password Error</a>
+        <a href="software-glitch.html" class="issue-link">Software Glitch</a>
+        <a href="backup.html" class="issue-link">Backup</a>
+        <a href="peripheral-devices.html" class="issue-link">Peripheral Devices</a>
 
+    </div>
+
+    <div class="content">
+        <h1>Network Connection</h1>
+        <div class="conversation-box">
+            <div class="agent-box">
+                <div class="response-label">Follow-up Questions:</div>
+<p>1. Are all users affected or just specific ones?</p>
+<p>2. Is the issue wired, wireless, or both?</p>
+<p>3. Have you tried rebooting the router or switch?</p>
+<p>4. Are you experiencing intermittent connectivity or a complete outage?</p>
+<p>5. Are there any error messages appearing?</p>
+            </div>
+            <div class="customer-box">
+                <div class="response-label">Potential Solutions:</div>
+<p>1. Restart the modem, router, or switch.</p>
+<p>2. Check the network cables for damage or loose connections.</p>
+<p>3. Verify the network adapter settings on the affected device.</p>
+<p>4. Run a network diagnostic to identify the issue.</p>
+<p>5. Reset the network configuration on the device.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ensure the user is logged in
+        if (sessionStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
