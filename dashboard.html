@@ -5,77 +5,159 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Support Help Tips</title>
+    <title>Dashboard - IT Support Help Calls</title>
     <style>
         body {
             display: flex;
-            margin: 0;
             font-family: Arial, sans-serif;
+            margin: 0;
         }
         .sidebar {
             width: 250px;
+            background-color: #2e3b4e;
+            padding: 20px;
             height: 100vh;
-            background-color: #333;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-        }
-        .sidebar a {
-            padding: 10px;
-            text-decoration: none;
-            color: white;
-            border-bottom: 1px solid #444;
-            cursor: pointer;
-        }
-        .sidebar a:hover {
-            background-color: #575757;
+            color: #ffffff;
         }
         .content {
             flex: 1;
             padding: 20px;
-            overflow: auto;
         }
-        .script-box {
+        .script-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .script-section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .conversation-box {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .customer-box, .agent-box {
+            flex: 1;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            background-color: #fff;
+        }
+        .customer-box {
+            background-color: #e8f4fa;
+            border-left: 5px solid #2196F3;
+        }
+        .agent-box {
+            background-color: #e7f9e8;
+            border-left: 5px solid #4CAF50;
+        }
+        .response-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .issue-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <h2>Issues</h2>
-        <a onclick="showScript('issue1')">Issue 1: Network Connectivity</a>
-        <a onclick="showScript('issue2')">Issue 2: Printer Not Working</a>
-        <a onclick="showScript('issue3')">Issue 3: Software Installation</a>
-        <!-- Add more issues as needed -->
+        <a href="#" class="issue-link" data-issue="introduction">Introduction</a>
+        <a href="#" class="issue-link" data-issue="problem-solving">Problem-Solving</a>
+        <a href="#" class="issue-link" data-issue="conclusion">Conclusion</a>
     </div>
+
     <div class="content">
-        <h2>Conversation Script</h2>
-        <div id="script-box" class="script-box">
-            <p>Select an issue from the sidebar to view the script.</p>
+        <h1>IT Support Help Calls Dashboard</h1>
+        <p>Select an issue from the sidebar to view the script.</p>
+
+        <!-- Default script content can go here if needed -->
+
+        <!-- Script container to display selected issue scripts -->
+        <div id="scriptContent" class="script-container">
+            <!-- Introduction Script -->
+            <div class="script-section" id="introduction">
+                <div class="section-title">1. Introduction</div>
+                <div class="conversation-box">
+                    <div class="agent-box">
+                        <div class="response-label">Your Part:</div>
+                        <p>A. “Good [morning/afternoon], Relative Network. This is SP speaking. How may I assist you today?”</p>
+                        <p>B. “Could you please provide your company name, your name, and the device you are using?”</p>
+                        <p>C. “Could you describe the issue you are experiencing? I’ll guide you through the resolution process.”</p>
+                    </div>
+                    <div class="customer-box">
+                        <div class="response-label">Customer's Part:</div>
+                        <p>(Customer responds with their issue, device details, etc.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem-Solving Script -->
+            <div class="script-section" id="problem-solving">
+                <div class="section-title">2. Problem-Solving</div>
+                <div class="conversation-box">
+                    <div class="agent-box">
+                        <div class="response-label">Your Part:</div>
+                        <p>Identify and address the issue based on the relevant problem type.</p>
+                    </div>
+                    <div class="customer-box">
+                        <div class="response-label">Customer's Part:</div>
+                        <p>(Customer provides additional details or feedback on troubleshooting steps.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion Script -->
+            <div class="script-section" id="conclusion">
+                <div class="section-title">3. Conclusion</div>
+                <div class="conversation-box">
+                    <div class="agent-box">
+                        <div class="response-label">Your Part:</div>
+                        <p>A. “Can you confirm if the issue has been resolved? If not, I may need to escalate this to my team leader and will update you as soon as possible.”</p>
+                        <p>B. “Is there anything else I can assist you with today?”</p>
+                        <p>C. “Thank you for calling. Have a great day. Goodbye.”</p>
+                    </div>
+                    <div class="customer-box">
+                        <div class="response-label">Customer's Part:</div>
+                        <p>(Customer confirms resolution or requests further assistance.)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        const scripts = {
-            issue1: `Customer: Hi, I'm having trouble with my internet connection.
-                     \nSupport: Sure, let's troubleshoot this together. Can you please tell me if you've tried restarting your router?`,
-            
-            issue2: `Customer: My printer is not working.
-                     \nSupport: I understand your concern. Let's start by checking if the printer is powered on and connected properly to your device.`,
-            
-            issue3: `Customer: How can I install new software on my computer?
-                     \nSupport: I'd be happy to guide you through this. First, can you confirm if you have administrative access on your computer?`
-            // Add more scripts as needed
-        };
+        // JavaScript to display the correct script section based on the clicked issue link
+        const issueLinks = document.querySelectorAll('.issue-link');
+        const scriptContent = document.getElementById('scriptContent');
 
-        function showScript(issueKey) {
-            const scriptBox = document.getElementById('script-box');
-            scriptBox.textContent = scripts[issueKey] || 'Script not available for this issue.';
-        }
+        issueLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const issueId = link.getAttribute('data-issue');
+
+                // Hide all script sections first
+                const allSections = scriptContent.querySelectorAll('.script-section');
+                allSections.forEach(section => section.style.display = 'none');
+
+                // Show the relevant section
+                const activeSection = document.getElementById(issueId);
+                if (activeSection) {
+                    scriptContent.style.display = 'block';
+                    activeSection.style.display = 'block';
+                }
+            });
+        });
     </script>
 </body>
 </html>
