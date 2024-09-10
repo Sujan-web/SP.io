@@ -17,11 +17,16 @@
             padding: 20px;
             height: 100vh;
             color: #ffffff;
-            position: fixed;
         }
         .content {
-            margin-left: 270px;
+            flex: 1;
             padding: 20px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
         }
         .conversation-box {
             display: flex;
@@ -47,6 +52,13 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
+        .issue-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -61,19 +73,24 @@
         <div class="conversation-box">
             <div class="agent-box">
                 <div class="response-label">Follow-up Questions:</div>
-                <p>1. “Can you confirm if the printer is turned on?”</p>
-                <p>2. “Is there any error message displayed on the printer?”</p>
-                <p>3. “Have you checked if the printer is connected to the network?”</p>
-                <p>4. “Is the printer set as the default printer on your device?”</p>
+                <p>1. Is the printer turned on?</p>
+                <p>2. Is there paper in the tray?</p>
+                <p>3. Are there any error messages displayed?</p>
             </div>
             <div class="customer-box">
                 <div class="response-label">Potential Solutions:</div>
-                <p>1. “Ensure the printer is powered on and properly connected.”</p>
-                <p>2. “Check for and address any error messages.”</p>
-                <p>3. “Verify network connection and settings.”</p>
-                <p>4. “Set the printer as the default printer in your device’s settings.”</p>
+                <p>1. Ensure the printer is powered on and connected to the network.</p>
+                <p>2. Check that there is paper in the tray and that the printer is not jammed.</p>
+                <p>3. If error messages are displayed, refer to the printer's manual for troubleshooting steps.</p>
             </div>
         </div>
     </div>
+
+    <script>
+        // Ensure the user is logged in
+        if (sessionStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
